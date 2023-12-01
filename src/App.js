@@ -111,7 +111,7 @@ function purifyResponse() {
   } else {
     //Profanity filter #2: The bad words npm package doesn't cover everything, so I made a big regular expression.
     var re =
-      /((fuck*)|(shit*)|(bitch*)|(porn*)|(assh*)|(ballsack*)|(whore*)|(hentai*)|(cunt*))/;
+      /((fuck*)|(shit*)|(bitch*)|(porn*)|(assh*)|(ballsack*)|(whore*)|(hentai*)|(butts*)|(racist*)|(cunt*))/;
     //teehee lol ^ https://www.youtube.com/watch?v=25f2IgIrkD4
     let profanityFilter2 = re.test(userinput);
     if (profanityFilter2 === true) {
