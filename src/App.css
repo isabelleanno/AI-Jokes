@@ -104,11 +104,7 @@ a:hover {
     display: none;
   }
   .container-fluid {
-    overflow-x: hidden;
-    max-height: 100vh;
-  }
-  .header {
-    display: flex;
+    overflow: hidden;
     flex-direction: column-reverse !important;
   }
   img#bg,
