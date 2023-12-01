@@ -46,6 +46,23 @@ function App() {
             </div>
             <p className="m-0" id="answer"></p>
           </div>
+          <div className="footer">
+            <p className="small text-center">
+              Made with by Isabelle Anno.{" "}
+              <a href="https://github.com/isabelleanno/AI-Jokes">
+                See my GitHub repository
+              </a>
+              ! Icon made by{" "}
+              <a href="https://www.flaticon.com/authors/rohim" title="Rohim">
+                {" "}
+                Rohim
+              </a>{" "}
+              from{" "}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                flaticon.com
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

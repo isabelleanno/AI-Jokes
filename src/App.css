@@ -56,6 +56,7 @@ div.container {
 div.row {
   background-color: rgb(248, 232, 239);
   padding: 55px;
+  padding-bottom: 0;
 }
 #welcome {
   display: inline;
@@ -84,4 +85,13 @@ button:hover {
   overflow: hidden;
   max-width: 64vw;
   min-height: 17vh;
+}
+div.footer {
+  padding-top: 45px;
+}
+a {
+  color: #f81c86;
+}
+a:hover {
+  color: #9e225e;
 }
