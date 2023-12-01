@@ -100,8 +100,9 @@ a:hover {
   div#background {
     display: none;
   }
-  .container {
+  .container-fluid {
     overflow-x: hidden;
+    max-height: 80vh;
   }
   img#bg,
   img#bg-top {
