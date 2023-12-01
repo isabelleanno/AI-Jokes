@@ -48,17 +48,28 @@ function App() {
           </div>
           <div className="footer">
             <p className="small text-center">
-              Made with by Isabelle Anno.{" "}
-              <a href="https://github.com/isabelleanno/AI-Jokes">
+              Made with ❤️ by Isabelle Anno.{" "}
+              <a
+                href="https://github.com/isabelleanno/AI-Jokes"
+                target="_blank"
+              >
                 See my GitHub repository
               </a>
               ! Icon made by{" "}
-              <a href="https://www.flaticon.com/authors/rohim" title="Rohim">
+              <a
+                href="https://www.flaticon.com/authors/rohim"
+                target="_blank"
+                title="Rohim"
+              >
                 {" "}
                 Rohim
               </a>{" "}
               from{" "}
-              <a href="https://www.flaticon.com/" title="Flaticon">
+              <a
+                href="https://www.flaticon.com/"
+                target="_blank"
+                title="Flaticon"
+              >
                 flaticon.com
               </a>
             </p>
