@@ -105,7 +105,11 @@ a:hover {
   }
   .container-fluid {
     overflow: hidden;
-    max-height: 80vh;
+    max-height: auto;
+  }
+  div.row {
+    border: none;
+    background-color: transparent;
   }
   .header {
     display: flex;
