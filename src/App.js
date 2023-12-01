@@ -100,6 +100,7 @@ function purifyResponse() {
     //Profanity filter #1: we are using the bad words npm package: https://www.npmjs.com/package/bad-words */
   } else if (filter.isProfane(userinput)) {
     alert("Please be respectful to the AI.");
+    window.location.reload();
   } else {
     //Profanity filter #2: The bad words npm package doesn't cover everything, so I made a big regular expression.
     var re =
@@ -108,6 +109,7 @@ function purifyResponse() {
     let profanityFilter2 = re.test(userinput);
     if (profanityFilter2 === true) {
       alert("Please be respectful to the AI.");
+      window.location.reload();
     } else {
       //Yay, it passed! Send to handleSubmit() function
       handleSubmit(userinput);
