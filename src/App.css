@@ -43,7 +43,7 @@ img#bg-top {
 h1 {
   font-family: "Inconsolata", monospace;
 }
-div.container {
+div.container-fluid {
   width: 100vw;
   height: 100vh;
   z-index: 3;
@@ -96,7 +96,7 @@ a:hover {
   color: #9e225e;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 500px) {
   img#bg,
   img#bg-top {
     display: none;
