@@ -105,6 +105,10 @@ a:hover {
   }
   .container-fluid {
     overflow: hidden;
+    max-height: 100vh;
+  }
+  .header {
+    display: flex;
     flex-direction: column-reverse !important;
   }
   img#bg,
