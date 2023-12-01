@@ -108,6 +108,7 @@ a:hover {
     max-height: auto;
   }
   div.row {
+    padding: inherit;
     margin: none;
     border: none;
     background-color: transparent;
