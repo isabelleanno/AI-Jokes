@@ -23,8 +23,10 @@ function App() {
               className="mx-4"
             />
           </div>
-          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-4 d-flex d-flex justify-content-center align-items-center">
-            <p className="d-inline m-0">Tell me a joke about...</p>
+          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-4 d-flex justify-content-center align-items-center">
+            <p className="d-inline m-0" id="desktop-p">
+              Tell me a joke about...
+            </p>
             <input type="text" className="mx-1" id="subject"></input>
             <button onClick={purifyResponse}>Generate</button>
           </div>

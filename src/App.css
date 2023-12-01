@@ -101,4 +101,11 @@ a:hover {
   img#bg-top {
     display: none;
   }
+  #desktop-p {
+    display: none !important;
+  }
+  #response {
+    width: 75vw;
+    max-width: 75vw;
+  }
 }
