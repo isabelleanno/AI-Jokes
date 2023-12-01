@@ -97,6 +97,12 @@ a:hover {
 }
 
 @media screen and (max-width: 500px) {
+  div#background {
+    display: none;
+  }
+  .container {
+    overflow-x: hidden;
+  }
   img#bg,
   img#bg-top {
     display: none;
@@ -107,5 +113,8 @@ a:hover {
   #response {
     width: 75vw;
     max-width: 75vw;
+  }
+  .row {
+    padding: 0 !important;
   }
 }
