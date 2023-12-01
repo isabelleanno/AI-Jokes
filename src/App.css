@@ -55,8 +55,7 @@ div.container-fluid {
 }
 div.row {
   background-color: rgb(248, 232, 239);
-  padding: 55px;
-  padding-bottom: 0;
+  padding: 55px 15px 0 15px;
 }
 #welcome {
   display: inline;
@@ -81,13 +80,14 @@ button:hover {
 }
 #response {
   background-color: white;
-  width: 64vw;
+  width: 40vw;
   overflow: hidden;
   max-width: 64vw;
   min-height: 17vh;
 }
 div.footer {
   padding-top: 45px;
+  padding-bottom: 15px;
 }
 a {
   color: #f81c86;

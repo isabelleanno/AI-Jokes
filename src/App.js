@@ -48,7 +48,7 @@ function App() {
             </div>
             <p className="m-0" id="answer"></p>
           </div>
-          <div className="col-10  footer">
+          <div className="col-8 footer">
             <p className="small text-center">
               Made with ❤️ by Isabelle Anno.{" "}
               <a
