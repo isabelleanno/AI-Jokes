@@ -12,67 +12,72 @@ function App() {
       <img src={require("./images/background.png")} alt="" id="bg-top" />
       <img src={require("./images/background.png")} alt="" id="bg" />
       <div className="container">
-        <div className="row t1 d-flex flex-column justify-content-center align-items-center">
-          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 text-center d-flex justify-content-center align-items-center">
-            <h1 className="display-4 m-0 " id="welcome">
-              Welcome to AI Jokes
-            </h1>
-            <img
-              src={require("./images/logo.png")}
-              id="logo"
-              className="mx-4"
-            />
-          </div>
-          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-4 d-flex d-flex justify-content-center align-items-center">
-            <p className="d-inline m-0">Tell me a joke about...</p>
-            <input type="text" className="mx-1" id="subject"></input>
-            <button onClick={purifyResponse}>Generate</button>
-          </div>
-          <div
-            className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 p-0 text-center d-flex flex-column justify-content-center t1"
-            id="response"
-          >
-            <div id="loading" className="d-flex justify-content-center d-none">
-              <Comment
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="comment-loading"
-                wrapperStyle={{}}
-                wrapperClass="comment-wrapper"
-                color="#fff"
-                backgroundColor="#1a1765"
+        <div className="container mobile-container">
+          <div className="row t1 d-flex flex-column justify-content-center align-items-center">
+            <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 text-center d-flex justify-content-center align-items-center">
+              <h1 className="display-4 m-0 " id="welcome">
+                Welcome to AI Jokes
+              </h1>
+              <img
+                src={require("./images/logo.png")}
+                id="logo"
+                className="mx-4"
               />
             </div>
-            <p className="m-0" id="answer"></p>
-          </div>
-          <div className="footer">
-            <p className="small text-center">
-              Made with ❤️ by Isabelle Anno.{" "}
-              <a
-                href="https://github.com/isabelleanno/AI-Jokes"
-                target="_blank"
+            <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-4 d-flex d-flex justify-content-center align-items-center">
+              <p className="d-inline m-0">Tell me a joke about...</p>
+              <input type="text" className="mx-1" id="subject"></input>
+              <button onClick={purifyResponse}>Generate</button>
+            </div>
+            <div
+              className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 p-0 text-center d-flex flex-column justify-content-center t1"
+              id="response"
+            >
+              <div
+                id="loading"
+                className="d-flex justify-content-center d-none"
               >
-                See my GitHub repository
-              </a>
-              ! Icon made by{" "}
-              <a
-                href="https://www.flaticon.com/authors/rohim"
-                target="_blank"
-                title="Rohim"
-              >
-                {" "}
-                Rohim
-              </a>{" "}
-              from{" "}
-              <a
-                href="https://www.flaticon.com/"
-                target="_blank"
-                title="Flaticon"
-              >
-                flaticon.com
-              </a>
-            </p>
+                <Comment
+                  visible={true}
+                  height="80"
+                  width="80"
+                  ariaLabel="comment-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="comment-wrapper"
+                  color="#fff"
+                  backgroundColor="#1a1765"
+                />
+              </div>
+              <p className="m-0" id="answer"></p>
+            </div>
+            <div className="footer">
+              <p className="small text-center">
+                Made with ❤️ by Isabelle Anno.{" "}
+                <a
+                  href="https://github.com/isabelleanno/AI-Jokes"
+                  target="_blank"
+                >
+                  See my GitHub repository
+                </a>
+                ! Icon made by{" "}
+                <a
+                  href="https://www.flaticon.com/authors/rohim"
+                  target="_blank"
+                  title="Rohim"
+                >
+                  {" "}
+                  Rohim
+                </a>{" "}
+                from{" "}
+                <a
+                  href="https://www.flaticon.com/"
+                  target="_blank"
+                  title="Flaticon"
+                >
+                  flaticon.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

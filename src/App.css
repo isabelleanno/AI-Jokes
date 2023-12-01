@@ -96,12 +96,9 @@ a:hover {
   color: #9e225e;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
   img#bg,
   img#bg-top {
     display: none;
-  }
-  div.row {
-    padding: 0;
   }
 }
