@@ -101,4 +101,7 @@ a:hover {
   img#bg-top {
     display: none;
   }
+  div.row {
+    padding: 0;
+  }
 }
