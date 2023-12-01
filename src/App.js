@@ -23,6 +23,11 @@ function App() {
               className="mx-4"
             />
           </div>
+          <div className="col-10 mt-4">
+            <p className="text-center p-0 m-0" id="mobile-p">
+              Tell me a joke about...
+            </p>
+          </div>
           <div className="col-10 my-4 d-flex justify-content-center align-items-center">
             <p className="d-inline m-0" id="desktop-p">
               Tell me a joke about...

@@ -95,18 +95,28 @@ a {
 a:hover {
   color: #9e225e;
 }
-
+#mobile-p {
+  display: none;
+}
+/*Make responsive*/
 @media screen and (max-width: 500px) {
   div#background {
     display: none;
   }
   .container-fluid {
     overflow-x: hidden;
-    max-height: 80vh;
+    max-height: 100vh;
   }
   img#bg,
   img#bg-top {
     display: none;
+  }
+  #mobile-p {
+    display: block;
+    margin-bottom: 0;
+  }
+  #logo {
+    margin: 0;
   }
   #desktop-p {
     display: none !important;
@@ -114,8 +124,5 @@ a:hover {
   #response {
     width: 76vw;
     max-width: 76vw;
-  }
-  .row {
-    padding: 0 !important;
   }
 }
