@@ -13,7 +13,7 @@ function App() {
       <img src={require("./images/background.png")} alt="" id="bg" />
       <div className="container-fluid">
         <div className="row t1 d-flex flex-column justify-content-center align-items-center">
-          <div className="col-10 text-center d-flex justify-content-center align-items-center">
+          <div className="header d-flex col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 text-center justify-content-center align-items-center">
             <h1 className="display-4 m-0 " id="welcome">
               Welcome to AI Jokes
             </h1>
@@ -23,7 +23,7 @@ function App() {
               className="mx-4"
             />
           </div>
-          <div className="col-10 mt-4">
+          <div className="col-12 mt-4">
             <p className="text-center p-0 m-0" id="mobile-p">
               Tell me a joke about...
             </p>
@@ -36,7 +36,7 @@ function App() {
             <button onClick={purifyResponse}>Generate</button>
           </div>
           <div
-            className="col-10 p-0 text-center d-flex flex-column justify-content-center t1"
+            className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 p-0 text-center d-flex flex-column justify-content-center t1"
             id="response"
           >
             <div id="loading" className="d-flex justify-content-center d-none">
@@ -53,7 +53,7 @@ function App() {
             </div>
             <p className="m-0" id="answer"></p>
           </div>
-          <div className="col-8 footer">
+          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 footer">
             <p className="small text-center">
               Made with ❤️ by Isabelle Anno.{" "}
               <a

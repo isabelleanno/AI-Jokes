@@ -107,6 +107,10 @@ a:hover {
     overflow-x: hidden;
     max-height: 100vh;
   }
+  .header {
+    display: flex;
+    flex-direction: column-reverse !important;
+  }
   img#bg,
   img#bg-top {
     display: none;
@@ -122,7 +126,7 @@ a:hover {
     display: none !important;
   }
   #response {
-    width: 76vw;
-    max-width: 76vw;
+    width: 60vw;
+    max-width: 60vw;
   }
 }
