@@ -119,7 +119,7 @@ function purifyResponse() {
   function handleSubmit(userinput) {
     let apiKey = "f7o330d7cc44511d503ab6b4tdbb899b";
     let prompt = `Tell me a joke about ${userinput}`;
-    let context = "PLease only tell the joke, nothing more.";
+    let context = "Please be appropriate and only tell the joke and punchline.";
 
     let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
     axios.get(apiURL).then(handleResponse);
