@@ -38,7 +38,7 @@ function App() {
         <div className="row t1 d-flex flex-column justify-content-center align-items-center">
           <div className="header d-flex col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 text-center justify-content-center align-items-center">
             <h1 className="display-4 m-0 " id="welcome">
-              Welcome to AI Jokes
+              Welcome to AI Poems
             </h1>
             <img
               src={require("./images/logo.png")}
@@ -46,20 +46,29 @@ function App() {
               className="mx-4"
             />
           </div>
-          <div className="col-12 mt-4">
-            <p className="text-center p-0 m-0" id="mobile-p">
-              Tell me a joke about...
-            </p>
+
+          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 d-flex mb-4 justify-content-center align-items-center">
+            <p className="d-inline m-0">Write a</p>
+            <input
+              type="text"
+              className="mx-1"
+              id="adjective"
+              placeholder="funny"
+            ></input>
+            <p className="d-inline m-0">poem about</p>
+            <input
+              type="text"
+              className="mx-1"
+              id="subject"
+              placeholder="dogs"
+            ></input>
+            <button onClick={purifyResponse} id="desktop-btn">
+              Generate
+            </button>
           </div>
-          <div className="col-10 mb-4 d-flex justify-content-center align-items-center">
-            <p className="d-inline m-0" id="desktop-p">
-              Tell me a joke about...
-            </p>
-            <input type="text" className="mx-1" id="subject"></input>
-            <button onClick={purifyResponse}>Generate</button>
-          </div>
+
           <div
-            className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 p-0 text-center d-flex flex-column justify-content-center t1"
+            className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 p-0 text-center d-flex flex-column mb-2 justify-content-center t1"
             id="response"
           >
             <div id="loading" className="d-flex justify-content-center d-none">
@@ -77,8 +86,14 @@ function App() {
             <p className="m-0" id="answer"></p>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 joke">
+            <p className="text-center">Want to create a poem instead? </p>
+          </div>
+          <div className="mt-2" id="mobile-btn">
+            <button onClick={purifyResponse}>Generate</button>
+          </div>
+          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 joke">
             <p className="text-center">
-              Want to create a poem instead?{" "}
+              Want to make a joke instead?{" "}
               <a href="https://ai-joke-generator.netlify.app/" id="jokes">
                 Click Here
               </a>
@@ -86,7 +101,7 @@ function App() {
           </div>
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 footer">
             <p className="small text-center">
-              Made with ❤️ by Isabelle Anno.{" "}
+              Made with 💙 by Isabelle Anno.{" "}
               <a
                 href="https://github.com/isabelleanno/AI-Jokes"
                 target="_blank"
@@ -120,33 +135,48 @@ function App() {
   function purifyResponse() {
     document.getElementById("loading").classList.remove("d-none");
     console.log("loading");
-    let userinput = document.getElementById("subject").value.trim();
+    document.getElementById("adjective").defaultValue = "funny";
+    document.getElementById("subject").defaultValue = "dogs";
+    let userinputSubject = document.getElementById("subject").value.trim();
+    let userinputAdjective = document.getElementById("adjective").value.trim();
     const filter = new Filter();
     //Make sure not an empty string
-    if (userinput === "" || userinput == " ") {
-      alert("Please type a joke subject before submitting");
+    if (
+      userinputSubject === "" ||
+      userinputSubject == " " ||
+      userinputAdjective === "" ||
+      userinputAdjective == " "
+    ) {
+      alert("Please fill out all the fields before submitting");
       //Profanity filter #1: we are using the bad words npm package: https://www.npmjs.com/package/bad-words */
-    } else if (filter.isProfane(userinput)) {
+    } else if (
+      filter.isProfane(userinputSubject) ||
+      filter.isProfane(userinputAdjective)
+    ) {
       setShow(true);
     } else {
       //Profanity filter #2: The bad words npm package doesn't cover everything, so I made a big regular expression.
       var re =
         /((fuck*)|(shit*)|(bitch*)|(porn*)|(assh*)|(ballsack*)|(whore*)|(hentai*)|(butts*)|(racist*)|(cunt*))/;
       //teehee lol ^ https://www.youtube.com/watch?v=25f2IgIrkD4
-      let profanityFilter2 = re.test(userinput);
-      if (profanityFilter2 === true) {
+      let profanityFilter2Adjective = re.test(userinputAdjective);
+      let profanityFilter2Subject = re.test(userinputSubject);
+      if (
+        profanityFilter2Adjective === true ||
+        profanityFilter2Subject === true
+      ) {
         setShow(true);
       } else {
         //Yay, it passed! Send to handleSubmit() function
-        handleSubmit(userinput);
+        handleSubmit(userinputSubject, userinputAdjective);
       }
     }
     //Makes a call to SheCodes AI API using axios
-    function handleSubmit(userinput) {
+    function handleSubmit(userinputSubject, userinputAdjective) {
       let apiKey = "f7o330d7cc44511d503ab6b4tdbb899b";
-      let prompt = `Tell me a joke about ${userinput}`;
+      let prompt = `Write a short ${userinputAdjective} poem about ${userinputSubject} in less than 65 tokens.`;
       let context =
-        "Please be appropriate and only tell the joke and punchline.";
+        "Please be appropriate and write the poem in under 65 tokens.";
 
       let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
       axios.get(apiURL).then(handleResponse);
