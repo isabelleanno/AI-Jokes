@@ -5,29 +5,29 @@
 
 body,
 html {
-  background-color: rgb(224, 246, 255);
+  background-color: rgba(255, 224, 239, 1);
   color: #1a1765;
 }
 img {
   width: 100%;
 }
 
-/*-----------------------------------------------------Background-----------------------------------------------*/
+/*--------------------------------------------------------Background-----------------------------------------*/
 div#background {
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 2;
-  background: rgb(224, 246, 255);
+  background: rgb(255, 224, 239);
   background: linear-gradient(
     180deg,
-    rgba(224, 246, 255, 0) 0%,
-    rgba(224, 246, 255, 1) 40%,
-    rgba(224, 246, 255, 1) 60%,
-    rgba(224, 246, 255, 0) 100%
+    rgba(255, 224, 239, 0) 0%,
+    rgba(255, 224, 239, 1) 40%,
+    rgba(255, 224, 239, 1) 60%,
+    rgba(255, 224, 239, 0) 100%
   );
 }
-/*----------------------------------------------------------Images--------------------------------------------------*/
+/*------------------------------------------------------Images------------------------------------------------*/
 img#bg {
   position: absolute;
   bottom: 0px;
@@ -39,11 +39,12 @@ img#bg-top {
   opacity: 10%;
   transform: rotate(180deg);
 }
+
 img#logo {
   width: 15%;
 }
 
-/*---------------------------------------------------------Content--------------------------------------------------*/
+/*-----------------------------------------------------Content-------------------------------------------------*/
 h1 {
   font-family: "Inconsolata", monospace;
 }
@@ -58,7 +59,7 @@ div.container-fluid {
   align-items: center;
 }
 div.row {
-  background-color: rgb(229, 243, 249);
+  background-color: rgb(248, 232, 239);
   padding: 55px 15px 0 15px;
 }
 #welcome {
@@ -75,15 +76,9 @@ button,
 input {
   background-color: white;
 }
-input#adjective {
-  width: 15vh;
-}
-input#subject {
-  width: 19vh;
-}
 button:hover {
-  color: rgb(224, 246, 255);
-  background-color: #3d8edb;
+  color: rgb(248, 232, 239);
+  background-color: #f81c86;
 }
 #response {
   background-color: white;
@@ -92,81 +87,22 @@ button:hover {
   max-width: 64vw;
   min-height: 17vh;
 }
-div.joke {
-  padding-top: 15px;
-}
 div.footer {
-  padding: 15px 0;
+  padding-top: 45px;
+  padding-bottom: 15px;
   font-size: small;
 }
 a {
-  color: #3d8edb;
+  color: #f81c86;
 }
 a:hover {
-  color: #1c5f9e;
+  color: #9e225e;
 }
-
-#mobile-btn {
+#mobile-p {
   display: none;
 }
-a#jokes {
-  border: 2px solid #1a1765;
-  padding: 3px;
-  border-radius: 3px;
-  background-color: #3d8edb;
-  color: rgb(224, 246, 255);
-  text-decoration: none;
-}
-a#jokes:hover {
-  background-color: #1f609c;
-}
-button#jokes > a {
-  color: rgb(224, 246, 255);
-  text-decoration: none;
-}
-button#jokes > a:hover {
-  color: #3d8edb;
-}
-/*----------------------------------------------------Make Responsive---------------------------------------------*/
-@media screen and (max-width: 900px) {
-  #response {
-    background-color: white;
-    width: 70vw;
-    overflow: hidden;
-    max-width: 80vw;
-    min-height: 17vh;
-  }
-}
 
-@media screen and (max-width: 750px) {
-  #response {
-    background-color: white;
-    width: 89vw;
-    overflow: hidden;
-    max-width: 91vw;
-    min-height: 17vh;
-  }
-}
-a#jokes {
-  border: 2px solid #1a1765;
-  padding: 3px;
-  border-radius: 3px;
-  background-color: #f81c86;
-  color: rgb(224, 246, 255);
-  text-decoration: none;
-}
-a#jokes:hover {
-  background-color: #9e225e;
-}
-div.joke {
-  padding-top: 15px;
-}
-div.footer {
-  padding: 15px 0;
-  font-size: small;
-}
 /*------------------------------------------------------Make responsive------------------------------------------*/
-
 @media screen and (max-width: 500px) {
   img#logo {
     width: 30%;
@@ -186,37 +122,21 @@ div.footer {
   }
   .header {
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
   }
   img#bg,
   img#bg-top {
     display: none;
   }
-  input#adjective {
-    width: 12vh;
-  }
-  input#subject {
-    width: 13vh;
-  }
-  #desktop-btn {
-    display: none;
-  }
-  #mobile-btn {
-    display: flex;
-    justify-content: center;
-  }
-  #mobile-btn button {
-    background-color: #3d8edb;
-    color: rgb(224, 246, 255);
-  }
-  #mobile-btn button:hover {
-    background-color: #265683;
+  #mobile-p {
+    display: block;
+    margin-bottom: 0;
   }
   #logo {
     margin: 0;
   }
-  .footer {
-    padding-top: 22px !important;
+  #desktop-p {
+    display: none !important;
   }
   #response {
     width: 85vw;
