@@ -12,7 +12,7 @@ img {
   width: 100%;
 }
 
-/*Background*/
+/*--------------------------------------------------------Background-----------------------------------------*/
 div#background {
   width: 100vw;
   height: 100vh;
@@ -27,6 +27,7 @@ div#background {
     rgba(255, 224, 239, 0) 100%
   );
 }
+/*------------------------------------------------------Images------------------------------------------------*/
 img#bg {
   position: absolute;
   bottom: 0px;
@@ -39,7 +40,11 @@ img#bg-top {
   transform: rotate(180deg);
 }
 
-/*Content*/
+img#logo {
+  width: 15%;
+}
+
+/*-----------------------------------------------------Content-------------------------------------------------*/
 h1 {
   font-family: "Inconsolata", monospace;
 }
@@ -59,9 +64,6 @@ div.row {
 }
 #welcome {
   display: inline;
-}
-img#logo {
-  width: 15%;
 }
 
 .t1,
@@ -88,6 +90,7 @@ button:hover {
 div.footer {
   padding-top: 45px;
   padding-bottom: 15px;
+  font-size: small;
 }
 a {
   color: #f81c86;
@@ -99,7 +102,7 @@ a:hover {
   display: none;
 }
 
-/*Make responsive*/
+/*------------------------------------------------------Make responsive------------------------------------------*/
 @media screen and (max-width: 500px) {
   img#logo {
     width: 30%;
