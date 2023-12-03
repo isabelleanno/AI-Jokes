@@ -101,7 +101,24 @@ a:hover {
 #mobile-p {
   display: none;
 }
-
+a#jokes {
+  border: 2px solid #1a1765;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: #f81c86;
+  color: rgb(224, 246, 255);
+  text-decoration: none;
+}
+a#jokes:hover {
+  background-color: #9e225e;
+}
+div.joke {
+  padding-top: 15px;
+}
+div.footer {
+  padding: 15px 0;
+  font-size: small;
+}
 /*------------------------------------------------------Make responsive------------------------------------------*/
 @media screen and (max-width: 500px) {
   img#logo {
