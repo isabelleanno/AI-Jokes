@@ -88,8 +88,7 @@ button:hover {
   min-height: 17vh;
 }
 div.footer {
-  padding-top: 45px;
-  padding-bottom: 15px;
+  padding: 15px 0;
   font-size: small;
 }
 a {
@@ -101,7 +100,27 @@ a:hover {
 #mobile-p {
   display: none;
 }
-
+a#jokes {
+  border: 2px solid #1a1765;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: #f81c86;
+  color: rgb(224, 246, 255);
+  text-decoration: none;
+}
+a#jokes:hover {
+  background-color: #9e225e;
+}
+button#jokes > a {
+  color: rgb(224, 246, 255);
+  text-decoration: none;
+}
+button#jokes > a:hover {
+  color: #f81c86;
+}
+div.joke {
+  padding-top: 15px;
+}
 /*------------------------------------------------------Make responsive------------------------------------------*/
 @media screen and (max-width: 500px) {
   img#logo {
