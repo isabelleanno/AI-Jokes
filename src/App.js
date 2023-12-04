@@ -79,7 +79,7 @@ function App() {
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 joke">
             <p className="text-center">
               Want to write a poem instead?{" "}
-              <a href="https://ai-joke-generator.netlify.app/" id="jokes">
+              <a href="https://ai-poem-writer.netlify.app/" id="jokes">
                 Click Here
               </a>
             </p>
