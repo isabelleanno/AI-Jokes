@@ -103,6 +103,7 @@ a:hover {
 a#jokes {
   border: 2px solid #1a1765;
   padding: 3px;
+  margin-left: 2vh;
   border-radius: 3px;
   background-color: #f81c86;
   color: rgb(224, 246, 255);
@@ -121,10 +122,46 @@ button#jokes > a:hover {
 div.joke {
   padding-top: 15px;
 }
+div.joke > p {
+  margin: 0;
+  align-self: center;
+}
 /*------------------------------------------------------Make responsive------------------------------------------*/
+@media screen and (max-width: 950px) {
+  #mobile-p {
+    display: block;
+  }
+  p#desktop-p {
+    display: none !important;
+  }
+  #response {
+    background-color: white;
+    width: 70vw;
+    overflow: hidden;
+    max-width: 80vw;
+    min-height: 17vh;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #response {
+    background-color: white;
+    width: 89vw;
+    overflow: hidden;
+    max-width: 91vw;
+    min-height: 17vh;
+  }
+  #subject {
+    width: 83vw;
+  }
+}
+
 @media screen and (max-width: 500px) {
   img#logo {
     width: 30%;
+  }
+  #subject {
+    width: 71vw;
   }
   div#background {
     display: none;
@@ -147,18 +184,46 @@ div.joke {
   img#bg-top {
     display: none;
   }
-  #mobile-p {
-    display: block;
-    margin-bottom: 0;
+  .prompt {
+    margin: 0.75rem 0;
+  }
+  .prompt > * {
+    font-size: 1.7vh;
+  }
+  input#adjective {
+    width: 10vh;
+  }
+
+  #desktop-btn {
+    display: none;
+  }
+  #mobile-btn {
+    display: flex;
+    justify-content: center;
+  }
+  #mobile-btn button {
+    background-color: #3d8edb;
+    color: rgb(224, 246, 255);
+  }
+  #mobile-btn button:hover {
+    background-color: #1c5f9e;
   }
   #logo {
     margin: 0;
   }
-  #desktop-p {
-    display: none !important;
+  .footer {
+    padding-top: 42px !important;
   }
   #response {
     width: 85vw;
     max-width: 85vw;
+    height: 22vh;
+  }
+  a#jokes {
+    font-size: 1.7vh;
+    margin-left: 1vh;
+  }
+  div.joke > p {
+    font-size: 1.7vh;
   }
 }

@@ -46,7 +46,7 @@ function App() {
               className="mx-4"
             />
           </div>
-          <div className="col-12 mt-4">
+          <div className="col-12 my-3">
             <p className="text-center p-0 m-0" id="mobile-p">
               Tell me a joke about...
             </p>
@@ -76,13 +76,11 @@ function App() {
             </div>
             <p className="m-0" id="answer"></p>
           </div>
-          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 joke">
-            <p className="text-center">
-              Want to write a poem instead?{" "}
-              <a href="https://ai-poem-writer.netlify.app/" id="jokes">
-                Click Here
-              </a>
-            </p>
+          <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 d-flex justify-content-center joke">
+            <p className="text-center">Want to write a poem instead? </p>
+            <a href="https://ai-joke-generator.netlify.app/" id="jokes">
+              Click Here
+            </a>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 footer">
             <p className="small text-center">
