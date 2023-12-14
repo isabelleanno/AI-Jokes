@@ -120,7 +120,7 @@ function App() {
     console.log("loading");
     let userinput = document.getElementById("subject").value.trim();
     const filter = new Filter();
-    filter.removeWords("airplane", "sunshine", "sushi");
+    filter.removeWords("sushi");
     //Make sure not an empty string
     if (userinput === "" || userinput == " ") {
       alert("Please type a joke subject before submitting");
@@ -130,8 +130,8 @@ function App() {
     } else {
       //Profanity filter #2: The bad words npm package doesn't cover everything, so I made a big regular expression.
       var re =
-        /((fuck*)|(shit*)|(bitch*)|(porn*)|(assh*)|(ballsack*)|(whore*)|(hentai*)|(butts*)|(racist*)|(cunt*))/;
-      //teehee lol ^ https://www.youtube.com/watch?v=25f2IgIrkD4
+        /((^fuck\W*)|(^bitch\W*)|(^porn\W*)|(^assh\W*)|(^shit\W*)|(^ballsack\W*)|(^whore\W*)|(^hentai\W*)|(^racist\W*)|(^cunt\W*))/;
+      //teehee lol ^
       let profanityFilter2 = re.test(userinput);
       if (profanityFilter2 === true) {
         setShow(true);
