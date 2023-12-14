@@ -120,6 +120,7 @@ function App() {
     console.log("loading");
     let userinput = document.getElementById("subject").value.trim();
     const filter = new Filter();
+    filter.removeWords("airplane", "sunshine", "sushi");
     //Make sure not an empty string
     if (userinput === "" || userinput == " ") {
       alert("Please type a joke subject before submitting");
