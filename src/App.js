@@ -1,8 +1,9 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Comment } from "react-loader-spinner";
 import axios from "axios";
+import $ from "jquery";
 import Typewriter from "typewriter-effect/dist/core";
 const Filter = require("bad-words");
 
@@ -15,8 +16,24 @@ function App() {
   };
 
   const [show, setShow] = useState(false);
-
+  const [language, setLanguage] = useState("English");
   const handleClose = () => window.location.reload();
+
+  useEffect(() => {
+    $("#language").on("click", function () {
+      //If language is Dutch
+      if ($("#language").is(":checked")) {
+        $(".Dutch").removeClass("d-none");
+        $(".English").addClass("d-none");
+        setLanguage("Dutch");
+      } else {
+        //If language is switched back to English
+        $(".Dutch").addClass("d-none");
+        $(".English").removeClass("d-none");
+        setLanguage("English");
+      }
+    });
+  }, []);
 
   return (
     <div className="App">
@@ -35,10 +52,27 @@ function App() {
       <img src={require("./images/background.png")} alt="" id="bg-top" />
       <img src={require("./images/background.png")} alt="" id="bg" />
       <div className="container-fluid">
+        <div className="lang-toggle d-flex">
+          <p className="m-0 mx-3">
+            <b>Language:</b> EN
+          </p>
+          <label className="switch">
+            <input
+              type="checkbox"
+              id="language"
+              aria-label="Language checkbox- toggle on English or Dutch."
+            />
+            <span className="slider lang-slider"></span>
+          </label>
+          <p className="m-0 mx-3">NL</p>
+        </div>
         <div className="row t1 d-flex flex-column justify-content-center align-items-center">
           <div className="header d-flex col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 text-center justify-content-center align-items-center">
-            <h1 className="display-4 m-0 " id="welcome">
+            <h1 className="display-4 m-0 English d-inline">
               Welcome to AI Jokes
+            </h1>
+            <h1 className="Dutch d-none display-4 m-0 d-inline">
+              Welkom bij AI-grappen
             </h1>
             <img
               src={require("./images/logo.png")}
@@ -46,17 +80,23 @@ function App() {
               className="mx-4"
             />
           </div>
+
           <div className="col-12 my-3">
             <p className="text-center p-0 m-0" id="mobile-p">
-              Tell me a joke about...
+              <span className="English"> Tell me a joke about...</span>
+              <span className="Dutch d-none">Vertel me een grapje over...</span>
             </p>
           </div>
           <div className="col-10 mb-4 d-flex justify-content-center align-items-center">
             <p className="d-inline m-0" id="desktop-p">
-              Tell me a joke about...
+              <span className="English"> Tell me a joke about...</span>
+              <span className="Dutch d-none">Vertel me een grapje over...</span>
             </p>
             <input type="text" className="mx-1" id="subject"></input>
-            <button onClick={purifyResponse}>Generate</button>
+            <button onClick={purifyResponse}>
+              <span className="English">Generate</span>
+              <span className="Dutch d-none">Genereren</span>
+            </button>
           </div>
           <div
             className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 p-0 text-center d-flex flex-column justify-content-center t1"
@@ -77,14 +117,21 @@ function App() {
             <p className="m-0" id="answer"></p>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 d-flex justify-content-center joke">
-            <p className="text-center">Want to write a poem instead? </p>
+            <p className="text-center">
+              <span className="English">Want to write a poem instead?</span>
+              <span className="Dutch d-none">
+                Wil je liever een gedicht schrijven?
+              </span>
+            </p>
             <a href="https://ai-poem-writer.netlify.app/" id="jokes">
-              Click Here
+              <span className="English">Click Here</span>
+              <span className="Dutch d-none">Klik hier</span>
             </a>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 footer">
-            <p className="small text-center">
-              Made with ❤️ by Isabelle Anno.{" "}
+            <p className="small text-center English mt-3">
+              Made with ❤️ by{" "}
+              <a href="https://isabelleanno.com/">Isabelle Anno</a>.{" "}
               <a
                 href="https://github.com/isabelleanno/AI-Jokes"
                 target="_blank"
@@ -101,6 +148,33 @@ function App() {
                 Rohim
               </a>{" "}
               from{" "}
+              <a
+                href="https://www.flaticon.com/"
+                target="_blank"
+                title="Flaticon"
+              >
+                flaticon.com
+              </a>
+            </p>
+            <p className="small text-center mt-3 Dutch d-none">
+              Gemaakt met ❤️ door{" "}
+              <a href="https://isabelleanno.com/">Isabelle Anno</a>.{" "}
+              <a
+                href="https://github.com/isabelleanno/AI-Jokes"
+                target="_blank"
+              >
+                Bekijk GitHub Repo
+              </a>
+              ! Icoon van{" "}
+              <a
+                href="https://www.flaticon.com/authors/rohim"
+                target="_blank"
+                title="Rohim"
+              >
+                {" "}
+                Rohim
+              </a>{" "}
+              bij{" "}
               <a
                 href="https://www.flaticon.com/"
                 target="_blank"
@@ -137,15 +211,23 @@ function App() {
         setShow(true);
       } else {
         //Yay, it passed! Send to handleSubmit() function
-        handleSubmit(userinput);
+        handleSubmit(userinput, language);
       }
     }
     //Makes a call to SheCodes AI API using axios
-    function handleSubmit(userinput) {
+    function handleSubmit(userinput, language) {
       let apiKey = "f7o330d7cc44511d503ab6b4tdbb899b";
-      let prompt = `Tell me a joke about ${userinput}`;
-      let context =
-        "Please be appropriate and only tell the joke and punchline.";
+      let prompt;
+      let context;
+      if (language === "English") {
+        prompt = `Tell me a joke about ${userinput}`;
+        context =
+          "Please be appropriate and only tell the joke and punchline in the English language.";
+      } else {
+        prompt = `Vertel me een grapje over ${userinput}`;
+        context =
+          "Wees gepast en vertel de grap en punchline alleen in de Nederlandse taal.";
+      }
 
       let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
       axios.get(apiURL).then(handleResponse);
